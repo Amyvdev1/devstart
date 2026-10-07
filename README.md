@@ -27,6 +27,6 @@ A documentation page can look complete while still leaving developers stuck. Dev
 ## Evidence boundary
 The benchmark uses local deterministic scenarios rather than real users or production APIs. A production version would add real tutorial content, persistent anonymized sessions, consent-aware analytics, version comparison, language-specific examples, and controlled user testing.
 
-## CI setup status
-The automated GitHub Actions workflow is pending upload authorization. The tests are included and can be run locally with python -m pytest. No passing GitHub CI run is claimed.
+## Continuous integration
+The Verify workflow runs the test suite and Python compilation on Python 3.12 for pushes to main and pull requests. It has read-only repository permissions. Run the tests locally with `python -m pytest`.
 
