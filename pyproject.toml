@@ -1,0 +1,13 @@
+[project]
+name = "devstart"
+version = "1.0.0"
+requires-python = ">=3.11"
+description = "Interactive API onboarding and recovery benchmark."
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

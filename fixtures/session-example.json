@@ -1,0 +1,23 @@
+{
+  "session_id": "ds_demo",
+  "attempts": [
+    {
+      "scenario_id": "missing-api-key",
+      "success": false,
+      "status": 401,
+      "error_code": "AUTHENTICATION_FAILED"
+    },
+    {
+      "scenario_id": "missing-api-key",
+      "success": true,
+      "status": 200,
+      "error_code": null
+    },
+    {
+      "scenario_id": "missing-product-id",
+      "success": true,
+      "status": 201,
+      "error_code": null
+    }
+  ]
+}
