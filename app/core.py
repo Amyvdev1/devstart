@@ -75,7 +75,7 @@ def evaluate_attempt(scenario_id: str, *, headers: dict[str, str] | None = None,
         data = body if isinstance(body, dict) else {}
         retries = data.get("max_retries")
         backoff = data.get("exponential_backoff")
-        ok = isinstance(retries, int) and 1 <= retries <= 3 and backoff is True
+        ok = type(retries) is int and 1 <= retries <= 3 and backoff is True
         return _result(ok, 200 if ok else 503, "Transient failure recovery is bounded." if ok else "Retry strategy is unsafe or incomplete.",
                        None if ok else "Use 1–3 retries with exponential_backoff=true, then surface a recoverable failure.", "UPSTREAM_UNAVAILABLE" if not ok else None)
 

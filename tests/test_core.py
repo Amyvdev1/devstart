@@ -18,3 +18,6 @@ def test_benchmark_tracks_recovery():
     rows=[{'scenario_id':'missing-api-key','success':False},{'scenario_id':'missing-api-key','success':True},{'scenario_id':'rate-limit','success':True}]
     b=benchmark_summary(rows,total_scenarios=2)
     assert b['completion_rate']==100.0 and b['recovery_rate']==100.0
+
+def test_boolean_is_not_a_retry_count():
+    assert not evaluate_attempt('server-error',body={'max_retries':True,'exponential_backoff':True})['success']
